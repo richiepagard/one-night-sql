@@ -1,3 +1,6 @@
+-- Drop the table if it is already exists --
+DROP TABLE IF EXISTS users;
+
 -- Table creation for users --
 CREATE TABLE users (
 	id SERIAL PRIMARY KEY,
