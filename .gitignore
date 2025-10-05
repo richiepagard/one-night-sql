@@ -1,0 +1,2 @@
+# Ignore swapp files, like those open in VIM
+*.swp
