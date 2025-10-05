@@ -8,5 +8,5 @@ SQL Playground.
 ### Postresql
 
 ```bash
-sudo -u postgres psql -d <db-name> -f <file-name.sql>
+sudo -u <username> psql -d <db-name> -f <file-name.sql>
 ```
