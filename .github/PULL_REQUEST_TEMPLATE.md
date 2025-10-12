@@ -1,7 +1,7 @@
 ## PR Title
 
 <!-- Description / Explanation-->
-Inserting data into a table. Insert one data and also show how to insert more than one data with some specified values.
+...
 
 ## Changes
 - ...
