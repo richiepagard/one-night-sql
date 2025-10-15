@@ -94,3 +94,23 @@ SELECT * FROM users;
 ```
 
 ---
+
+
+## Adding Column To A Table
+To add a column to an existing table, we have to use the `ALTER TABLE` statement.
+The `ALTER TABLE` statement is used to **add**, **delete**, or **modify columns** in an existing table.
+Now, I want to add a column named `age` to our `users` table.
+When adding columns we must also **specify the data type** of the column. The `age` column will be an `integer` for now, and we specify `integer` types with the `INT` keyword.
+The structure of the `ALTER TABLE` is something like this for adding a new column to a table:
+```sql
+ALTER TABLE <table-name>
+ADD <new-column-name> <data-type>;
+```
+
+Now, lets add `age` column to the `users` table with the `INT` data type:
+```sql
+ALTER TABLE users
+ADD age INT;
+```
+
+---
