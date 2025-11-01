@@ -114,3 +114,24 @@ ADD age INT;
 ```
 
 ---
+
+## Update, Modifying An Existing Value
+
+To updating a value's column we should first know this that this value and the column are exist.
+For updating (modifying) a value's column we should use `UPDATE` statement.
+The `UPDATE` statement use to modify a value field and it uses under the certain table.
+The structure of the `UPDATE` for modifying a value is this:
+```sql
+UPDATE <table-name>
+SET <column-name> = <new-value>
+WHERE <column-name> = <existing-value>;
+```
+
+Now, let's modify all users with **richie** username by updating `age` column to a value like `22`:
+```sql
+UPDATE users
+SET age = 22
+WHERE username = 'richie';
+```
+
+---
