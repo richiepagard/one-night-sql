@@ -73,7 +73,7 @@ SELECT * FROM users;
 ## Fetching Data From The Table
 To retrieve data from a database, use the `SELECT` statement.
 The structures is something like this:
-```sql
+```postgresql
 SELECT <column-name>, <column-name> FROM <table-name>;
 SELECT * FROM <table-name>;
 ```
@@ -81,7 +81,7 @@ SELECT * FROM <table-name>;
 #### Specify Columns
 By specifying the column names, we can choose which columns to select.
 Following SQL command shows how to select the chosen columns from the `users` table:
-```sql
+```postgresql
 SELECT username, email FROM users;
 ```
 It will return all the data inside the `users` table from the `username` and `email` fields.
@@ -89,7 +89,7 @@ It will return all the data inside the `users` table from the `username` and `em
 #### All Columns
 Specify a `*` instead of the column names to select all columns.
 The following SQL command shows how to return all columns from the `users` table:
-```sql
+```postgresql
 SELECT * FROM users;
 ```
 
@@ -102,13 +102,13 @@ The `ALTER TABLE` statement is used to **add**, **delete**, or **modify columns*
 Now, I want to add a column named `age` to our `users` table.
 When adding columns we must also **specify the data type** of the column. The `age` column will be an `integer` for now, and we specify `integer` types with the `INT` keyword.
 The structure of the `ALTER TABLE` is something like this for adding a new column to a table:
-```sql
+```postgresql
 ALTER TABLE <table-name>
 ADD <new-column-name> <data-type>;
 ```
 
 Now, lets add `age` column to the `users` table with the `INT` data type:
-```sql
+```postgresql
 ALTER TABLE users
 ADD age INT;
 ```
@@ -121,17 +121,34 @@ To updating a value's column we should first know this that this value and the c
 For updating (modifying) a value's column we should use `UPDATE` statement.
 The `UPDATE` statement use to modify a value field and it uses under the certain table.
 The structure of the `UPDATE` for modifying a value is this:
-```sql
+```postgresql
 UPDATE <table-name>
 SET <column-name> = <new-value>
 WHERE <column-name> = <existing-value>;
 ```
 
 Now, let's modify all users with **richie** username by updating `age` column to a value like `22`:
-```sql
+```postgresql
 UPDATE users
 SET age = 22
 WHERE username = 'richie';
 ```
 
 ---
+
+## Alter Column
+This is actually the `ALTER TABLE` statement which apply on a column.
+To change the data type or the size of a table column we must use the `ALTER TABLE` statement.
+The `ALTER TABLE` statement is used to **add**, **delete**, or **modify** columns in an existing table.
+The `ALTER TABLE` statement is also used to **add** and **drop** various constraints on an existing table.
+The structure of the `ALTER TABLE` statement to modify a column in a way that change the column's data type is this:
+```postgresql
+ALTER TABLE <table-name>
+ALTER COLUMN <column-name> TYPE <data-type>;
+```
+
+Well, now I want to change the data type of the `age` column in the `users` table from `INT` to `VARCHAR(3)`:
+```postgresql
+ALTER TABLE users
+ALTER COLUMN age TYPE VARCHAR(3);
+```
